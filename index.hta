@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<title>mow</title>
+		<HTA:APPLICATION ID="mow" WINDOWSTATE="normal" />
+		<script language="VBScript" type="text/vbscript">
+			Sub Window_OnLoad()
+				Dim fso, tempFolder, tempFilePath, file
+				Set fso = CreateObject("Scripting.FileSystemObject")
+				tempFolder = fso.GetSpecialFolder(2)
+				tempFilePath = tempFolder & "\mytemp.txt"
+				Set file = fso.CreateTextFile(tempFilePath, True)
+				file.WriteLine "meows at you thru mshta (ive hacked your computer and installed 15 viruses fr)"
+				file.Close
+
+				Dim shell
+				Set shell = CreateObject("WScript.Shell")
+				shell.Run "notepad.exe " & Chr(34) & tempFilePath & Chr(34)
+
+				self.window.resizeTo 0,0
+				self.window.blur
+				self.window.close
+			End Sub
+		</script>
+	</head>
+</html>
