@@ -29,7 +29,7 @@
 			<p class="p">idk what to put here so enjoy funny meme</p>
 			<img class="img" src="images/funny2.gif" alt="funny meme, please see" />
 			<br>
-			<button id="button">click this</button>
+			<button id="button" onclick="toggle()">click this</button>
 			<p hidden="" id="textbutton">thx for clicking it</p>
 			<br>
 		</center>
@@ -39,7 +39,11 @@
 	<a href="blur.html" class="hidden">funi blur looking thing</a>
 	<br />
 	<a href="http://ajioxd.github.io" class="hidden">friend site</a>
-	<script type="text/javascript" src="./index.js"></script>
+	<script type="text/javascript">
+		const s = document.createElement("script");
+		s.src  = "./index.js?nocache=" + Date.now();
+		document.body.appendChild(s);
+	</script>
 </body>
 
 </html>
